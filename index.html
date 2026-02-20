@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubem Mota | Executivo de Mobilidade Corporativa</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lmBlue: '#004593',  /* Azul Institucional LM */
+                        lmCyan: '#00B4E5',  /* Cyan Institucional LM */
+                        lmDark: '#012148',  /* Azul Escuro (Textos e Fundos Escuros) */
+                        lmLight: '#F3F4F6', /* Fundo Claro (Cinza suave) */
+                        lmAccent: '#FFD700' /* Amarelo/Dourado de Destaque */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; background-color: #F3F4F6; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #012148; }
+        ::-webkit-scrollbar-thumb { background: #00B4E5; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #004593; }
+
+        /* Scroll Reveal Utility Classes */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #00B4E5, #004593);
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased selection:bg-lmCyan selection:text-white">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-lmDark/95 backdrop-blur-md border-b border-lmCyan/20" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 bg-gradient-to-br from-lmCyan to-lmBlue rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">RM</div>
+                    <span class="font-bold text-white tracking-wide uppercase">Rubem Mota</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#match" class="text-gray-300 hover:text-lmCyan transition-colors text-sm font-semibold tracking-wide">O Match</a>
+                    <a href="#expansao" class="text-gray-300 hover:text-lmCyan transition-colors text-sm font-semibold tracking-wide">Expansão</a>
+                    <a href="#cases" class="text-gray-300 hover:text-lmCyan transition-colors text-sm font-semibold tracking-wide">Cases LM</a>
+                    <a href="#trilha" class="text-gray-300 hover:text-lmCyan transition-colors text-sm font-semibold tracking-wide">Trilha B2B</a>
+                    <a href="#plano" class="bg-lmCyan/10 text-lmCyan px-4 py-2 rounded-full border border-lmCyan/30 hover:bg-lmCyan hover:text-white transition-all text-sm font-bold shadow-[0_0_15px_rgba(0,180,229,0.3)]">Plano 90 Dias</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-lmDark pt-16">
+        <!-- Background Blobs -->
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-lmCyan rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-lmBlue rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-lmAccent rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center flex flex-col items-center">
+            
+            <div class="relative group cursor-pointer mb-8">
+                <div class="absolute -inset-1 bg-gradient-to-r from-lmCyan to-lmBlue rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                <img src="foto_perfil.png" alt="Rubem Mota" onerror="this.src='https://ui-avatars.com/api/?name=Rubem+Mota&background=00B4E5&color=fff&size=200'" class="relative w-48 h-48 rounded-full border-4 border-lmDark object-cover shadow-2xl transition-transform duration-500 group-hover:scale-105 bg-white">
+            </div>
+
+            <div class="inline-block px-5 py-2 bg-lmCyan/20 border border-lmCyan/30 text-lmCyan text-xs md:text-sm font-bold uppercase tracking-widest rounded-full mb-6 backdrop-blur-sm animate-fade-in-up">
+                Especialista em Mobilidade Corporativa
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tight animate-fade-in-up" style="animation-delay: 0.1s;">Rubem <span class="text-transparent bg-clip-text bg-gradient-to-r from-lmCyan to-lmAccent">Mota</span></h1>
+            <h2 class="text-xl md:text-3xl text-gray-400 font-light mb-8 animate-fade-in-up" style="animation-delay: 0.2s;">Consultor de Negócios Comerciais Sênior</h2>
+            
+            <p class="text-gray-300 text-lg md:text-xl max-w-3xl leading-relaxed mb-10 text-center animate-fade-in-up" style="animation-delay: 0.3s;">
+                Unindo a precisão analítica da Ciência de Dados à vasta experiência em Terceirização de Frotas B2B. Focado em acelerar a expansão comercial, otimizar o TCO de clientes corporativos e garantir rentabilidade para a <strong class="text-white">LM Mobilidade</strong>.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in-up" style="animation-delay: 0.4s;">
+                <span class="bg-white/10 px-6 py-3 rounded-lg flex items-center text-sm font-bold text-white border border-white/20 backdrop-blur-md hover:bg-white/20 transition-all cursor-default">
+                    <i class="fa-solid fa-globe text-lmCyan text-xl mr-3"></i> Ampla Disponibilidade Nacional
+                </span>
+                <span class="bg-white/10 px-6 py-3 rounded-lg flex items-center text-sm font-bold text-white border border-white/20 backdrop-blur-md hover:bg-white/20 transition-all cursor-default">
+                    <i class="fa-solid fa-car text-lmCyan text-xl mr-3"></i> DNA em Frotas & Mobilidade
+                </span>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex justify-center gap-6 text-2xl animate-fade-in-up" style="animation-delay: 0.5s;">
+                <a href="https://wa.me/5511994090868" target="_blank" class="text-gray-400 hover:text-lmCyan transition-transform hover:scale-110"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="mailto:rubem.mota@icloud.com" class="text-gray-400 hover:text-lmCyan transition-transform hover:scale-110"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/rubem-mota" target="_blank" class="text-gray-400 hover:text-lmCyan transition-transform hover:scale-110"><i class="fa-brands fa-linkedin"></i></a>
+                <span class="text-gray-400 text-sm flex items-center border-l border-gray-600 pl-6 ml-2"><i class="fa-solid fa-location-dot text-lmCyan mr-2"></i> Ampla liberdade geográfica</span>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 animate-bounce text-gray-500">
+                <i class="fa-solid fa-chevron-down text-2xl"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- O MATCH PERFEITO -->
+    <section id="match" class="py-24 px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16 reveal">
+            <h2 class="text-4xl md:text-5xl font-black text-lmDark mb-4 uppercase tracking-tight">O <span class="text-lmCyan">Match</span> Perfeito</h2>
+            <p class="text-gray-600 text-xl max-w-3xl mx-auto">Por que minha trajetória estratégica foi desenhada para acelerar os resultados da LM.</p>
+        </div>
+
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+            <!-- Radar -->
+            <div class="w-full lg:w-1/2 flex items-center justify-center reveal">
+                <div class="glass-card rounded-2xl p-6 shadow-xl w-full h-[450px] relative hover:shadow-2xl transition-shadow duration-300">
+                    <canvas id="skillsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Pontos -->
+            <div class="w-full lg:w-1/2 flex flex-col gap-6">
+                <div class="flex items-start bg-white p-6 rounded-2xl shadow-md border-l-4 border-lmBlue hover:translate-x-2 transition-transform duration-300 reveal cursor-default group">
+                    <div class="bg-blue-50 p-4 rounded-full mr-5 text-lmBlue group-hover:bg-lmBlue group-hover:text-white transition-colors duration-300 shrink-0">
+                        <i class="fa-solid fa-car-side text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl text-lmDark mb-2">DNA em Terceirização (Frotas)</h3>
+                        <p class="text-gray-600 leading-relaxed">Sólida vivência no mercado de mobilidade atuando pela Localiza Rent a Car e GM Fleet. Domino a venda de valor (Redução de TCO) para gestores de frota e diretores financeiros, trocando a lógica de "posse" por "uso".</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start bg-white p-6 rounded-2xl shadow-md border-l-4 border-lmCyan hover:translate-x-2 transition-transform duration-300 reveal cursor-default group" style="transition-delay: 100ms;">
+                    <div class="bg-cyan-50 p-4 rounded-full mr-5 text-lmCyan group-hover:bg-lmCyan group-hover:text-white transition-colors duration-300 shrink-0">
+                        <i class="fa-solid fa-bullseye text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl text-lmDark mb-2">Perfil Hunter B2B</h3>
+                        <p class="text-gray-600 leading-relaxed">Especialista em abertura de mercados e prospecção ativa de grandes contas. Utilizo metodologias de Venda Consultiva (SPIN Selling) para diagnosticar ineficiências operacionais e apresentar soluções de alta complexidade.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start bg-white p-6 rounded-2xl shadow-md border-l-4 border-lmDark hover:translate-x-2 transition-transform duration-300 reveal cursor-default group" style="transition-delay: 200ms;">
+                    <div class="bg-gray-100 p-4 rounded-full mr-5 text-lmDark group-hover:bg-lmDark group-hover:text-white transition-colors duration-300 shrink-0">
+                        <i class="fa-solid fa-chart-pie text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl text-lmDark mb-2">Visão Analítica (Data-Driven)</h3>
+                        <p class="text-gray-600 leading-relaxed">Em formação em Ciência de Dados, aplico inteligência analítica para gestão de CRM, análise de KPIs e construção de dashboards. Decisões estratégicas baseadas em dados reais de mercado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPANSÃO NACIONAL -->
+    <section id="expansao" class="py-24 bg-lmDark text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 uppercase tracking-tight">Expansão & <span class="text-lmCyan">Mobilidade</span></h2>
+                <p class="text-gray-300 text-xl max-w-3xl mx-auto">Um executivo "Coringa" pronto para escalar as soluções da LM Mobilidade. Tenho base em Jacareí-SP, mas possuo total liberdade e disposição para atuar em regiões estratégicas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Região 1 -->
+                <div class="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-8 hover:-translate-y-3 transition-transform duration-300 reveal group">
+                    <div class="text-5xl text-lmCyan mb-6 group-hover:scale-110 transition-transform origin-left"><i class="fa-solid fa-tractor"></i></div>
+                    <h3 class="text-2xl font-bold mb-3">Centro-Oeste (CO)</h3>
+                    <p class="text-gray-400 leading-relaxed">Conhecimento profundo do cinturão do Agronegócio (MT, MS, GO e DF). Forte networking com produtores, usinas, agroindustrias, distribuidores de insumos agrícolas e transportadoras que demandam terceirização robusta de frotas leves e pesadas (caminhonetes e implementos).</p>
+                </div>
+                
+                <!-- Região 2 -->
+                <div class="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-8 hover:-translate-y-3 transition-transform duration-300 reveal group" style="transition-delay: 100ms;">
+                    <div class="text-5xl text-lmCyan mb-6 group-hover:scale-110 transition-transform origin-left"><i class="fa-solid fa-city"></i></div>
+                    <h3 class="text-2xl font-bold mb-3">Sul & Interior de SP</h3>
+                    <p class="text-gray-400 leading-relaxed">Alta adaptabilidade para atuar em polos industriais e corporativos maduros. Experiência na condução de Joint Business Plans (JBPs) com indústrias de transformação e empresas de logística complexa.</p>
+                </div>
+
+                <!-- Região 3 -->
+                <div class="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-8 hover:-translate-y-3 transition-transform duration-300 reveal group" style="transition-delay: 200ms;">
+                    <div class="text-5xl text-lmCyan mb-6 group-hover:scale-110 transition-transform origin-left"><i class="fa-solid fa-map"></i></div>
+                    <h3 class="text-2xl font-bold mb-3">Nordeste (NE)</h3>
+                    <p class="text-gray-400 leading-relaxed">Prontidão para assumir praças em franca expansão. Experiência prévia de cobertura no MA/PI e PA, adaptando o portfólio de mobilidade corporativa às demandas regionais logísticas e governamentais.</p>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="bg-gradient-to-r from-lmBlue to-lmCyan rounded-3xl p-8 md:p-12 shadow-2xl reveal relative overflow-hidden flex flex-col md:flex-row justify-around items-center gap-8">
+                <div class="absolute right-0 bottom-0 text-[150px] font-black opacity-10 leading-none pointer-events-none">LM</div>
+                <div class="text-center relative z-10">
+                    <div class="text-5xl md:text-6xl font-black text-white mb-2 shadow-sm">+20</div>
+                    <div class="text-sm uppercase tracking-widest text-blue-100 font-bold">Anos em B2B</div>
+                </div>
+                <div class="text-center relative z-10">
+                    <div class="text-5xl md:text-6xl font-black text-white mb-2 shadow-sm">33%</div>
+                    <div class="text-sm uppercase tracking-widest text-blue-100 font-bold">Cresc. Receita (12m)</div>
+                </div>
+                <div class="text-center relative z-10">
+                    <div class="text-5xl md:text-6xl font-black text-white mb-2 shadow-sm">120%</div>
+                    <div class="text-sm uppercase tracking-widest text-blue-100 font-bold">Atingimento de Metas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASES LM CORE BUSINESS -->
+    <section id="cases" class="py-24 px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16 reveal">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-lmAccent/20 text-yellow-600 font-bold rounded-full mb-4">
+                <i class="fa-solid fa-star"></i> Core Business LM
+            </div>
+            <h2 class="text-4xl md:text-5xl font-black text-lmDark mb-4 uppercase tracking-tight">Cases de <span class="text-lmCyan">Sucesso</span></h2>
+            <p class="text-gray-600 text-xl max-w-3xl mx-auto">Autoridade comprovada no setor de Frotas e Mobilidade.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <!-- Case 1 -->
+            <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-t-8 border-lmBlue hover:shadow-2xl transition-all duration-300 reveal group">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h3 class="text-3xl font-black text-lmDark leading-tight mb-2">LOCALIZA <br><span class="text-lmCyan text-xl font-bold">RENT A CAR S/A</span></h3>
+                        <p class="text-gray-500 font-bold text-sm"><i class="fa-regular fa-calendar mr-2"></i> Nov/2018 – Jan/2022 | Executivo B2B</p>
+                    </div>
+                    <div class="text-5xl text-gray-200 group-hover:text-lmCyan/20 transition-colors"><i class="fa-solid fa-car-side"></i></div>
+                </div>
+                
+                <p class="text-gray-700 leading-relaxed mb-8">Atuação direta no segmento corporativo, responsável pela abertura de contas B2B (Corporate, Travel e Governo). Aplicação profunda de conceitos financeiros de gestão de frota para comprovar o ganho de eficiência no aluguel vs frota própria.</p>
+
+                <div class="space-y-4">
+                    <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100">
+                        <h5 class="font-bold text-lmBlue mb-1 flex items-center gap-2"><i class="fa-solid fa-trophy text-lmAccent"></i> Prêmio de Rentabilidade</h5>
+                        <p class="text-sm text-gray-600">Reconhecido nacionalmente com o prêmio de Melhor Rentabilidade de Carteira (RPD) em 2020.</p>
+                    </div>
+                    <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100">
+                        <h5 class="font-bold text-lmBlue mb-1 flex items-center gap-2"><i class="fa-solid fa-medal text-lmAccent"></i> Olimpíadas de Vendas</h5>
+                        <p class="text-sm text-gray-600">Vencedor de 5 medalhas por alta performance e superação de múltiplos KPIs no ano de 2021.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case 2 -->
+            <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-t-8 border-lmDark hover:shadow-2xl transition-all duration-300 reveal group" style="transition-delay: 150ms;">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h3 class="text-3xl font-black text-lmDark leading-tight mb-2">GM FINANCIAL <br><span class="text-lmCyan text-xl font-bold">(GM Fleet)</span></h3>
+                        <p class="text-gray-500 font-bold text-sm"><i class="fa-regular fa-calendar mr-2"></i> Fev/2025 – Atual | Gerente Reg. Pleno</p>
+                    </div>
+                    <div class="text-5xl text-gray-200 group-hover:text-lmDark/20 transition-colors"><i class="fa-solid fa-truck-fast"></i></div>
+                </div>
+                
+                <p class="text-gray-700 leading-relaxed mb-8">Responsável pelo relacionamento institucional e desenvolvimento da divisão B2B de Frotas da General Motors para as regiões Centro-Oeste e Norte. Ponto focal na alavancagem de grandes contas logísticas.</p>
+                
+                <div class="bg-gradient-to-br from-lmDark to-lmBlue text-white p-6 rounded-xl shadow-lg mt-auto h-full max-h-48 flex flex-col justify-center">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="p-3 bg-white/10 rounded-full"><i class="fa-solid fa-arrow-trend-up text-2xl text-lmCyan"></i></div>
+                        <h5 class="font-bold text-lg leading-tight">O Maior Resultado da História da Regional</h5>
+                    </div>
+                    <p class="text-sm text-gray-300">Através de prospecção estratégica e engajamento da rede, atingi o maior resultado histórico em vendas (volume e receita) na região no 3º mês de operação da divisão.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRILHA B2B E FORMAÇÃO -->
+    <section id="trilha" class="py-24 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-black text-lmDark mb-4 uppercase tracking-tight">Trilha de <span class="text-lmCyan">Performance</span></h2>
+                <p class="text-gray-600 text-xl max-w-3xl mx-auto">Experiência consolidada e Formação Estratégica.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-16">
+                <!-- Experiências (Timeline) -->
+                <div class="w-full lg:w-1/2">
+                    <h3 class="text-2xl font-bold text-lmBlue mb-8 flex items-center gap-3"><i class="fa-solid fa-briefcase"></i> Outras Experiências B2B</h3>
+                    
+                    <div class="space-y-8 relative timeline-line pl-10">
+                        <div class="relative reveal">
+                            <div class="absolute -left-[45px] top-1 w-4 h-4 rounded-full bg-lmCyan shadow-[0_0_10px_rgba(0,180,229,0.5)]"></div>
+                            <h4 class="text-xl font-bold text-lmDark">Consultor de Vendas Sênior</h4>
+                            <p class="text-lmCyan font-bold text-sm mb-2">CEBRACE (Saint-Gobain & NSG) | Jan/2024 – Fev/2025</p>
+                            <p class="text-gray-600 text-sm">Vendas industriais de alto valor agregado. Forte atuação consultiva, resultando na elevação do faturamento médio mensal de R$ 6M para mais de R$ 8M (+33%) em menos de 1 ano.</p>
+                        </div>
+                        
+                        <div class="relative reveal">
+                            <div class="absolute -left-[45px] top-1 w-4 h-4 rounded-full bg-lmDark border-2 border-white"></div>
+                            <h4 class="text-xl font-bold text-lmDark">Senior Business Dev. Rep.</h4>
+                            <p class="text-lmCyan font-bold text-sm mb-2">ZEISS GROUP | Jan/2022 – Jan/2024</p>
+                            <p class="text-gray-600 text-sm">Desenvolvimento agressivo de mercado. Turnaround de market share em 5 meses e quebra de recordes históricos de faturamento corporativo na região Centro-Oeste.</p>
+                        </div>
+
+                        <div class="relative reveal">
+                            <div class="absolute -left-[45px] top-1 w-4 h-4 rounded-full bg-gray-400 border-2 border-white"></div>
+                            <h4 class="text-xl font-bold text-lmDark">Gerente de Negócios (Hunter-Farmer)</h4>
+                            <p class="text-lmCyan font-bold text-sm mb-2">CIELO S/A | Jul/2017 – Nov/2018</p>
+                            <p class="text-gray-600 text-sm">Atuação tática no interior de MT e agronegócio. Atingimento de metas > 120% através de parcerias bancárias, controle rígido de CRM e prevenção de Churn.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formação (Grid) -->
+                <div class="w-full lg:w-1/2">
+                    <h3 class="text-2xl font-bold text-lmBlue mb-8 flex items-center gap-3"><i class="fa-solid fa-graduation-cap"></i> Formação Estratégica</h3>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-lmCyan hover:shadow-xl transition-shadow reveal">
+                            <i class="fa-solid fa-database text-3xl text-lmCyan mb-4"></i>
+                            <h4 class="font-bold text-lmDark mb-1">Ciência de Dados</h4>
+                            <p class="text-xs text-gray-500 font-bold mb-2">UniCesumar | Em andamento (2027)</p>
+                            <p class="text-sm text-gray-600">Foco prático em Análise Comportamental, KPIs, previsibilidade de vendas e dados.</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-lmBlue hover:shadow-xl transition-shadow reveal" style="transition-delay: 100ms;">
+                            <i class="fa-solid fa-handshake-angle text-3xl text-lmBlue mb-4"></i>
+                            <h4 class="font-bold text-lmDark mb-1">SPIN Selling Avançado</h4>
+                            <p class="text-xs text-gray-500 font-bold mb-2">Miller Heiman Group (36h)</p>
+                            <p class="text-sm text-gray-600">Investigação de Situação, Problema, Implicação e Necessidade em Vendas B2B.</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-gray-400 hover:shadow-xl transition-shadow reveal">
+                            <i class="fa-solid fa-building text-3xl text-gray-400 mb-4"></i>
+                            <h4 class="font-bold text-lmDark mb-1">Administração</h4>
+                            <p class="text-xs text-gray-500 font-bold mb-2">Universidade Estadual Londrina (UEL)</p>
+                            <p class="text-sm text-gray-600">Base sólida em gestão corporativa, viabilidade econômica e planejamento.</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-lmDark hover:shadow-xl transition-shadow reveal" style="transition-delay: 100ms;">
+                            <i class="fa-solid fa-chart-line text-3xl text-lmDark mb-4"></i>
+                            <h4 class="font-bold text-lmDark mb-1">Marketing B2B</h4>
+                            <p class="text-xs text-gray-500 font-bold mb-2">Universidade de São Paulo (USP)</p>
+                            <p class="text-sm text-gray-600">Estratégias de funil de vendas avançado e gestão moderna de Key Accounts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANO DE 90 DIAS -->
+    <section id="plano" class="py-24 bg-lmDark relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-lmBlue/20"></div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tight">Plano <span class="text-lmCyan">90 Dias</span></h2>
+                <p class="text-gray-300 text-xl max-w-3xl mx-auto">Estratégia prática para garantir tração imediata, previsibilidade e fechamento de novos contratos para a LM Mobilidade.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Fase 1 -->
+                <div class="glass-card bg-white/10 rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300 reveal group relative overflow-hidden border-t-4 border-lmCyan">
+                    <div class="absolute -right-4 -top-4 text-8xl font-black text-white/5 group-hover:text-lmCyan/10 transition-colors">01</div>
+                    <div class="inline-block bg-lmCyan text-lmDark text-xs font-bold px-3 py-1 rounded-full mb-4">DIAS 01 - 30</div>
+                    <h3 class="font-bold text-2xl text-white mb-4">Imersão LM & Mapeamento Hunter</h3>
+                    <ul class="text-gray-300 space-y-3">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-lmCyan mt-1"></i> Imersão profunda no portfólio LM (Leves e Pesados).</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-lmCyan mt-1"></i> Mapeamento via CRM de contas "Low Hanging Fruits".</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-lmCyan mt-1"></i> Reativação do networking corporativo prévio.</li>
+                    </ul>
+                </div>
+
+                <!-- Fase 2 -->
+                <div class="glass-card bg-white/10 rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300 reveal group relative overflow-hidden border-t-4 border-blue-400" style="transition-delay: 150ms;">
+                    <div class="absolute -right-4 -top-4 text-8xl font-black text-white/5 group-hover:text-blue-400/10 transition-colors">02</div>
+                    <div class="inline-block bg-blue-400 text-lmDark text-xs font-bold px-3 py-1 rounded-full mb-4">DIAS 31 - 60</div>
+                    <h3 class="font-bold text-2xl text-white mb-4">Tração Comercial & Venda de Valor (TCO)</h3>
+                    <ul class="text-gray-300 space-y-3">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-400 mt-1"></i> Aceleração em campo e execução do funil de vendas.</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-400 mt-1"></i> Reuniões focadas em simulações de TCO.</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-400 mt-1"></i> Propostas sob medida destacando inovação de frota.</li>
+                    </ul>
+                </div>
+
+                <!-- Fase 3 -->
+                <div class="glass-card bg-white/10 rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300 reveal group relative overflow-hidden border-t-4 border-lmAccent" style="transition-delay: 300ms;">
+                    <div class="absolute -right-4 -top-4 text-8xl font-black text-white/5 group-hover:text-lmAccent/10 transition-colors">03</div>
+                    <div class="inline-block bg-lmAccent text-lmDark text-xs font-bold px-3 py-1 rounded-full mb-4">DIAS 61 - 90</div>
+                    <h3 class="font-bold text-2xl text-white mb-4">Conversão & Previsibilidade</h3>
+                    <ul class="text-gray-300 space-y-3">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-lmAccent mt-1"></i> Negociação e fechamento de grandes contratos.</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-lmAccent mt-1"></i> Início do trabalho "Farmer" garantindo implantação.</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-lmAccent mt-1"></i> Relatórios preditivos via CRM e Forecast claro.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CTA -->
+    <footer class="bg-lmDark border-t border-white/10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center reveal">
+            <h2 class="text-3xl md:text-5xl font-black text-white mb-8">Pronto para gerar <span class="text-lmCyan">receita</span> para a LM.</h2>
+            
+            <div class="flex flex-wrap justify-center gap-6 mb-12">
+                <a href="https://wa.me/5511994090868" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-green-500/50 flex items-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i> Falar no WhatsApp
+                </a>
+                <a href="https://linkedin.com/in/rubem-mota" target="_blank" class="bg-[#0077b5] hover:bg-[#006097] text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-[#0077b5]/50 flex items-center gap-3">
+                    <i class="fa-brands fa-linkedin text-2xl"></i> Conectar no LinkedIn
+                </a>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 text-gray-400 font-semibold mb-12">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-phone text-lmCyan"></i> (62) 99272-9593</span>
+                <span class="hidden md:inline">|</span>
+                <span class="flex items-center gap-2"><i class="fa-brands fa-whatsapp text-lmCyan"></i> (11) 99409-0868</span>
+                <span class="hidden md:inline">|</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-envelope text-lmCyan"></i> rubem.mota@icloud.com</span>
+                <span class="hidden md:inline">|</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-lmCyan"></i>Disponibilidade Nacional</span>
+            </div>
+
+            <p class="text-gray-600 text-sm">© 2026 Rubem Moreira Mota. Portfólio Executivo B2B desenvolvido para LM Mobilidade.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts de Interatividade -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // 1. Configuração do Gráfico de Radar Interativo
+            const ctx = document.getElementById('skillsChart').getContext('2d');
+            const data = {
+                labels: ['Gestão Frotas B2B', 'Prospecção Hunter', 'Venda Consultiva', 'Análise TCO', 'Relacionamento C-Level', 'Ciência de Dados'],
+                datasets: [{
+                    label: 'Nível de Expertise (%)',
+                    data: [100, 95, 100, 90, 85, 80],
+                    backgroundColor: 'rgba(0, 180, 229, 0.3)', /* Cyan LM Transparente */
+                    borderColor: '#00B4E5',
+                    pointBackgroundColor: '#012148',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#00B4E5',
+                    pointRadius: 4,
+                    pointHoverRadius: 6,
+                    borderWidth: 2,
+                }]
+            };
+
+            new Chart(ctx, {
+                type: 'radar',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: {
+                        duration: 2000,
+                        easing: 'easeOutQuart'
+                    },
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(0,0,0,0.05)' },
+                            grid: { color: 'rgba(0,0,0,0.05)' },
+                            pointLabels: {
+                                font: { size: window.innerWidth < 768 ? 10 : 12, family: 'Inter', weight: 'bold' },
+                                color: '#012148'
+                            },
+                            ticks: { display: false, min: 30, max: 100 }
+                        }
+                    },
+                    plugins: { 
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#012148',
+                            titleFont: { family: 'Inter', size: 14 },
+                            bodyFont: { family: 'Inter', size: 14, weight: 'bold' },
+                            padding: 12,
+                            displayColors: false,
+                            callbacks: {
+                                label: function(context) { return context.raw + '% de Match Estratégico'; }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // 2. Lógica de Scroll Reveal (Animações ao rolar a página)
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Anima apenas uma vez
+                });
+            }, revealOptions);
+
+            revealElements.forEach(el => revealOnScroll.observe(el));
+
+            // 3. Efeito Navbar (Mudar cor ao rolar)
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow-lg', 'bg-lmDark/95');
+                    navbar.classList.remove('bg-transparent', 'border-transparent');
+                } else {
+                    // navbar.classList.remove('shadow-lg', 'bg-lmDark/95');
+                    // navbar.classList.add('bg-transparent', 'border-transparent');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
